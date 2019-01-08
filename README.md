@@ -136,13 +136,9 @@ kubectl get svc, will give the provisioned Loadbalancer Endpoint. Create a DNS R
     
 ## Application in Action
 
-    
-    Hit the Gitlab Service/ Sign in.
-    
-    Create a new Project and push the code.
-    
- 
-    
-   
-    ![alt text](https://github.com/ahmed531/parserappAWS/blob/master/Content/mysql11.JPG)
+Hit the Gitlab service and push the code, you will also see your pipelines
+
+The application will look like 
+
+![alt text](https://github.com/ahmed531/parserappAWS/blob/master/Content/mysql11.JPG)
     
