@@ -38,7 +38,7 @@ mysql> CREATE TABLE appdata (     sku varchar(255),     name varchar(255),     p
 ## Provision Kubernetes Cluster on AWS
 
 ```
-kops create cluster pucdemo.powerupcloud.com --ssh-public-key ~/.ssh/id_rsa.pub --master-zones ap-south-1a --zones ap-south-1a,ap-south-1b,ap-south-1a --master-size=t2.medium --node-count=2 --master-count 3 --node-size t2.small --topology private --dns public --networking calico --vpc vpc-xxxx --state s3://pucdemo-kops-state-store --subnets subnet-xxxx,subnet-xxxx --utility-subnets subnet-xxx,subnet-xxx --kubernetes-version 1.11.0 --api-loadbalancer-type internal --admin-access 172.31.0.0/16 --ssh-access 172.31.xx.xxx/32 --cloud-labels "Environment=TEST" --master-volume-size 100 --node-volume-size 100 --encrypt-etcd-storage;
+kops create cluster phpapp12 --ssh-public-key ~/.ssh/id_rsa.pub --master-zones ap-south-1a --zones ap-south-1a,ap-south-1b,ap-south-1a --master-size=t2.medium --node-count=2 --master-count 3 --node-size t2.small --topology private --dns public --networking calico --vpc vpc-xxxx --state s3://phpapp-kops-state-store --subnets subnet-xxxx,subnet-xxxx --utility-subnets subnet-xxx,subnet-xxx --kubernetes-version 1.11.0 --api-loadbalancer-type internal --admin-access 172.31.0.0/16 --ssh-access 172.31.xx.xxx/32 --cloud-labels "Environment=TEST" --master-volume-size 100 --node-volume-size 100 --encrypt-etcd-storage;
 ```
 
 
