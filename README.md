@@ -135,7 +135,7 @@ kubectl get svc, will give the provisioned Loadbalancer Endpoint. Create a DNS R
     
 ## Application in Action
 
-Hit the Gitlab service and push the code, you will also see your pipelines
+Hit the Gitlab service using the credentials and push the code, you will also see your pipelines
 
 The application will look like 
 
