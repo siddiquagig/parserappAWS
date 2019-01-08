@@ -1,6 +1,6 @@
 # parserappAWS
 
-This explains the setup of PHP app using Gitlab on kubernetes
+This explains the setup of PHP app using Gitlab on kubernetes , you can also find it in python.
 
 ## GOAL
 Develop a sample PHP application which will parse the CSV file and upload the content of the file into a MySQL RDS Instance. The Kubernetes Cluster is being provisioned using KOPS tool.
