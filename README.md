@@ -141,4 +141,9 @@ Hit the Gitlab service and push the code, you will also see your pipelines
 The application will look like 
 
 ![alt text](https://github.com/ahmed531/parserappAWS/blob/master/Content/mysql11.JPG)
+
+![alt text](https://github.com/ahmed531/parserappAWS/blob/master/Content/mysql22.JPG)
+
+
+![alt text](https://github.com/ahmed531/parserappAWS/blob/master/Content/mysql33.JPG)
     
