@@ -3,7 +3,7 @@
 This explains how i setup my PHP app using Gitlab on kubernetes
 
 ## GOAL
-I have developed a sample PHP application which will parse the CSV file and upload the content of the file into a MySQL RDS Instance. The application UI also supports some other functionalities like updating/deleting a particular row from the database, store and view processed files via AWS S3 bucket and view all the records of MySQL database. The Kubernetes Cluster is being provisioned using KOPS tool.
+I have developed a sample PHP application which will parse the CSV file and upload the content of the file into a MySQL RDS Instance. The Kubernetes Cluster is being provisioned using KOPS tool.
 
 
 ## Requirements
@@ -17,7 +17,7 @@ I have developed a sample PHP application which will parse the CSV file and uplo
 
 ## Create Database
 create database csvdb;
-mysql> CREATE TABLE appdata (     code varchar(255),     item varchar(255),     price varchar(255) );
+mysql> CREATE TABLE appdata (     sku varchar(255),     name varchar(255),     price varchar(255) );
 
 
 
@@ -103,8 +103,8 @@ kubectl get svc, will give the provisioned Loadbalancer Endpoint. Create a DNS R
 
 ## App Functionality
 
-```
-    -Basic Authentication is enabled for the main page.
+
+-Basic Authentication is enabled for the main page.
     -The browse field will accept the CSV file only.
     -After uploading, the data will be imported into the database by clicking the “Import” button.
     -The processed files can be viewed by clicking on the “View Files” button.
@@ -112,7 +112,6 @@ kubectl get svc, will give the provisioned Loadbalancer Endpoint. Create a DNS R
     -The data record can be edited inline and updated into the database by clicking the “Archive” button.
     -A particular row can be deleted from the database by clicking the “Delete” button.
     -The application is running on two different nodes in different subnets and is being deployed under a Classic LoadBalancer.
-```
 
 
     
@@ -124,7 +123,7 @@ kubectl get svc, will give the provisioned Loadbalancer Endpoint. Create a DNS R
     
 ## CI/CD 
     
-    -The Gitlab Instance and Runner are running as pods on the Kubernetes Cluster.
+-The Gitlab Instance and Runner are running as pods on the Kubernetes Cluster.
     -The application code is available in the Gitlab Repository along with Dockerfile and .gitlab-ci.yml
     -The pipeline is implemented in Gitlab Console using .gitlab-ci.yml file.
     -Whenever a commit is pushed to the Repository, the pipeline is triggered which will execute the following steps in a    pipeline:
