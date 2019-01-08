@@ -9,13 +9,13 @@ cursor = mydb.cursor()
 
 #csv_data = csv.reader(file('soh.csv'))
 
-sql = """INSERT INTO appdata(code, item, price ) VALUES(%s, %s, %s)"""
+sql = """INSERT INTO appdata(sku, name, price ) VALUES(%s, %s, %s)"""
 
 with open('/root/soh.csv') as csvfile:
     reader = csv.DictReader(csvfile,delimiter = ',')
     for row in reader:
-         sku = row['code']
-         name = row['item']
+         sku = row['sku']
+         name = row['name']
          price = row['price']
          values = (code, item, price)
          print(values)
