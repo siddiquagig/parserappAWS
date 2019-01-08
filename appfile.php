@@ -14,8 +14,8 @@ if ($conn->connect_error) {
 mysqli_select_db($conn,"data");
 while(!feof($file))
   {
-    $code = fgetcsv($file)[0];
-    $item = fgetcsv($file)[1];
+    $sku = fgetcsv($file)[0];
+    $name = fgetcsv($file)[1];
     $price = fgetcsv($file)[2];
 
 
