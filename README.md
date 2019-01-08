@@ -94,7 +94,7 @@ kubectl create -f csvparser/k8s/deployment.yaml
 kubectl create -f csvparser/k8s/service.yaml
 ```
 
-“kubectl get svc” will give the provisioned Loadbalancer Endpoint. Create a DNS Record for the Endpoint
+“kubectl get svc” will give the provisioned Loadbalancer Endpoint. Create a DNS Record for the Endpoint.
 
 
 ## App Functionality
@@ -125,5 +125,6 @@ kubectl create -f csvparser/k8s/service.yaml
     
     Create a new Project and push the code.
     
-    The Application:
+   
+    ![alt text](https://github.com/ahmed531/parserappAWS/blob/master/Content/mysql11.JPG)
     
