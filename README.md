@@ -41,6 +41,7 @@ mysql> CREATE TABLE appdata (     code varchar(255),     item varchar(255),     
 kops create cluster pucdemo.powerupcloud.com --ssh-public-key ~/.ssh/id_rsa.pub --master-zones ap-south-1a --zones ap-south-1a,ap-south-1b,ap-south-1a --master-size=t2.medium --node-count=2 --master-count 3 --node-size t2.small --topology private --dns public --networking calico --vpc vpc-xxxx --state s3://pucdemo-kops-state-store --subnets subnet-xxxx,subnet-xxxx --utility-subnets subnet-xxx,subnet-xxx --kubernetes-version 1.11.0 --api-loadbalancer-type internal --admin-access 172.31.0.0/16 --ssh-access 172.31.xx.xxx/32 --cloud-labels "Environment=TEST" --master-volume-size 100 --node-volume-size 100 --encrypt-etcd-storage;
 ```
 
+
 Attach ECR Full access policy to cluster nodes Instance Profile.
 
 ## Create Required Kubernetes Resources
@@ -55,7 +56,7 @@ Replace the values for the following variable in the kubernetes-gitlab/gitlab-de
     GITLAB_SSH_HOST
     
     
-    ```
+```
 kubectl create -f kubernetes-gitlab/gitlab-ns.yml
 kubectl create -f kubernetes-gitlab/postgresql-deployment.yml
 kubectl create -f kubernetes-gitlab/postgresql-svc.yml
@@ -63,9 +64,11 @@ kubectl create -f kubernetes-gitlab/redis-deployment.yml
 kubectl create -f kubernetes-gitlab/redis-svc.yml
 kubectl create -f kubernetes-gitlab/gitlab-deployment.yml
 kubectl create -f kubernetes-gitlab/gitlab-svc.yml
+
 ```
 
-“kubectl get svc -n gitlab” will give the provisioned Loadbalancer Endpoint. Create a DNS Record for the Endpoint.
+
+kubectl get svc -n gitlab” will give the provisioned Loadbalancer Endpoint. Create a DNS Record for the Endpoint.
 
 
 
@@ -94,7 +97,8 @@ kubectl create -f csvparser/k8s/deployment.yaml
 kubectl create -f csvparser/k8s/service.yaml
 ```
 
-“kubectl get svc” will give the provisioned Loadbalancer Endpoint. Create a DNS Record for the Endpoint.
+
+kubectl get svc, will give the provisioned Loadbalancer Endpoint. Create a DNS Record for the Endpoint.
 
 
 ## App Functionality
@@ -109,7 +113,9 @@ kubectl create -f csvparser/k8s/service.yaml
     -The application is running on two different nodes in different subnets and is being deployed under a Classic LoadBalancer.
     
     
-    ## CI/CD
+    
+    
+    ## CI/CD 
     
     -The Gitlab Instance and Runner are running as pods on the Kubernetes Cluster.
     -The application code is available in the Gitlab Repository along with Dockerfile and .gitlab-ci.yml
@@ -117,6 +123,9 @@ kubectl create -f csvparser/k8s/service.yaml
     -Whenever a commit is pushed to the Repository, the pipeline is triggered which will execute the following steps in a    pipeline:
     -Build: Build a docker image from the Dockerfile and push to AWS ECR Repo.
     -Deploy: Updates the docker image for the already running application pod on Kubernetes Cluster.
+    
+    
+    
     
     
     ## Application in Action
