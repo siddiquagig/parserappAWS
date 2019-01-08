@@ -103,6 +103,7 @@ kubectl get svc, will give the provisioned Loadbalancer Endpoint. Create a DNS R
 
 ## App Functionality
 
+```
     -Basic Authentication is enabled for the main page.
     -The browse field will accept the CSV file only.
     -After uploading, the data will be imported into the database by clicking the “Import” button.
@@ -111,11 +112,17 @@ kubectl get svc, will give the provisioned Loadbalancer Endpoint. Create a DNS R
     -The data record can be edited inline and updated into the database by clicking the “Archive” button.
     -A particular row can be deleted from the database by clicking the “Delete” button.
     -The application is running on two different nodes in different subnets and is being deployed under a Classic LoadBalancer.
+```
+
+
     
     
     
     
-    ## CI/CD 
+    
+    
+    
+## CI/CD 
     
     -The Gitlab Instance and Runner are running as pods on the Kubernetes Cluster.
     -The application code is available in the Gitlab Repository along with Dockerfile and .gitlab-ci.yml
@@ -127,12 +134,14 @@ kubectl get svc, will give the provisioned Loadbalancer Endpoint. Create a DNS R
     
     
     
+## Application in Action
+
     
-    ## Application in Action
-    
-    Hit the Gitlab Service/ Sign in
+    Hit the Gitlab Service/ Sign in.
     
     Create a new Project and push the code.
+    
+ 
     
    
     ![alt text](https://github.com/ahmed531/parserappAWS/blob/master/Content/mysql11.JPG)
