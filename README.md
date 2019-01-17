@@ -68,7 +68,7 @@ kubectl create -f kubernetes-gitlab/gitlab-svc.yml
 ```
 
 
-kubectl get svc -n gitlab” will give the provisioned Loadbalancer Endpoint. Create a DNS Record for the Endpoint.
+kubectl get svc -n gitlab will give the provisioned Loadbalancer Endpoint. Create a DNS Record for the Endpoint.
 
 
 
